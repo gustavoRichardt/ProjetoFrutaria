@@ -4,10 +4,10 @@ public abstract class Produto {
 
     private static int contadorID = 0;
 
-    private int id;
-    private String nome;
-    private double preco;
-    private int quantidade;
+    protected int id;
+    protected String nome;
+    protected double preco;
+    protected int quantidade;
 
     public Produto(String nome, double preco, int quantidade) {
         this.id = ++contadorID;
@@ -17,8 +17,7 @@ public abstract class Produto {
     }
 
     public int getId() {
-        return id;
-    }
+        return id; }
 
     public String getNome() {
         return nome;
