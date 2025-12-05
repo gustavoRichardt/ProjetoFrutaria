@@ -2,9 +2,11 @@ package br.com.appfrutaria.view;
 
 import java.util.Scanner;
 
+
 import br.com.appfrutaria.model.Produto;
 import br.com.appfrutaria.model.Fruta;
 import br.com.appfrutaria.model.Verdura;
+import br.com.appfrutaria.model.Limpeza;
 
 public class Atendente {
     private Scanner input;
@@ -17,14 +19,19 @@ public class Atendente {
         System.out.println("\n=== MENU PRINCIPAL ===");
         System.out.println("1 - Cadastrar fruta");
         System.out.println("2 - Cadastrar verdura");
-        System.out.println("3 - Listar frutas");
-        System.out.println("4 - Listar verduras");
-        System.out.println("5 - Pesquisar fruta");
-        System.out.println("6 - Pesquisar verdura");
-        System.out.println("7 - Remover fruta");
-        System.out.println("8 - Remover verdura");
-        System.out.println("9 - Verificar total de frutas");
-        System.out.println("10 - Verficar total de verduras");
+        System.out.println("3 - Cadastrar produto de limpeza");
+        System.out.println("4 - Listar frutas");
+        System.out.println("5 - Listar verduras");
+        System.out.println("6 - Listar produtos de limpeza");
+        System.out.println("7 - Pesquisar fruta");
+        System.out.println("8 - Pesquisar verdura");
+        System.out.println("9 - Pesquisar produto de limpeza");
+        System.out.println("10 - Remover fruta");
+        System.out.println("11 - Remover verdura");
+        System.out.println("12 - Remover produto de limpeza");
+        System.out.println("13 - Verificar total de frutas");
+        System.out.println("14 - Verficar total de verduras");
+        System.out.println("15 - Verficar total de produtos de limpeza");
         System.out.println("0 - Sair");
         System.out.print("Escolha uma opção: ");
         int opcao = input.nextInt();
@@ -122,6 +129,55 @@ public class Atendente {
     }
     
     
+    						//
+    
+    public String limpezaNome() {
+        System.out.print("Digite o nome do produto de limpeza: ");
+        return input.nextLine();
+    }
+
+    public double limpezaPreco() {
+        System.out.print("Digite o preço do produto de limpeza: ");
+        double preco = input.nextDouble();
+        input.nextLine();
+        return preco;
+    }
+
+    public int limpezaQuantidade() {
+        System.out.print("Digite a quantidade: ");
+        int quantidade = input.nextInt();
+        input.nextLine();
+        return quantidade;
+    }
+
+    public String limpezaFragancia() {
+        System.out.print("Digite a fragância do produto de limpeza: ");
+        String fragancia = input.nextLine();
+        input.nextLine();
+        return fragancia;
+       
+    }
+    	public String pesquisarLimpeza() { 
+    	    System.out.print("Digite o nome do produto de limpeza a pesquisar: ");
+    	    return input.nextLine();
+    	}
+    
+    public String removerLimpeza() {
+        System.out.print("Digite o nome do produto de limpeza a remover: ");
+        return input.nextLine();
+    }
+
+    public void vizualizarLimpezaRemovida(String nome) {
+        System.out.println("O produto de limpeza " + nome + "' foi removido.");
+    }
+
+    public void mensagemLimpezaNaoEncontrada() {
+        System.out.println("Produto de limpeza não encontrado.");
+    }
+    				
+    					//
+    
+    
     public void vizualizarFruta(Fruta fruta) {
         System.out.println("\n--- FRUTA ---");
         System.out.println("Nome: " + fruta.getNome());
@@ -137,6 +193,14 @@ public class Atendente {
         System.out.println("Preço: R$ " + verdura.getPreco());
         System.out.println("Quantidade: " + verdura.getQuantidade());
         System.out.println("Peso: " + verdura.getPeso());
+    }
+    
+    public void vizualizarLimpeza(Limpeza limpeza) {
+        System.out.println("\n--- PRODUTO DE LIMPEZA ---");
+        System.out.println("Nome: " + limpeza.getNome());
+        System.out.println("Preço: R$ " + limpeza.getPreco());
+        System.out.println("Quantidade: " + limpeza.getQuantidade());
+        System.out.println("Fragância: " + limpeza.getFragancia());
     }
 
     public void finalizarApp() {

@@ -17,7 +17,8 @@ public abstract class Produto {
     }
 
     public int getId() {
-        return id; }
+        return id;
+    }
 
     public String getNome() {
         return nome;
